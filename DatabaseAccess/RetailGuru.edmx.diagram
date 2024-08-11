@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="72788eb8546145e48f9c863e3f15acae" Name="Diagram1">
+        <EntityTypeShape EntityType="RetailGuruModel.DesignationTable" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RetailGuruModel.EmployeeAttendanceTable" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RetailGuruModel.EmployeeEducationTable" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RetailGuruModel.EmployeeTable" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RetailGuruModel.sysdiagram" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RetailGuruModel.UserTable" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RetailGuruModel.UserTypeTable" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
+        <AssociationConnector Association="RetailGuruModel.FK_EmployeeTable_DesignationTable" ManuallyRouted="false" />
+        <AssociationConnector Association="RetailGuruModel.FK_EmployeeAttendanceTable_EmployeeTable" ManuallyRouted="false" />
+        <AssociationConnector Association="RetailGuruModel.FK_EmployeeEducationTable_EmployeeTable" ManuallyRouted="false" />
+        <AssociationConnector Association="RetailGuruModel.FK_EmployeeTable_UserTable" ManuallyRouted="false" />
+        <AssociationConnector Association="RetailGuruModel.FK_UserTable_UserTypeTable" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RetailGuruModel.EmployeeSalaryTable" Width="1.5" PointX="7.5" PointY="11.25" />
+        <AssociationConnector Association="RetailGuruModel.FK_EmployeeSalaryTable_EmployeeTable" />
+        <EntityTypeShape EntityType="RetailGuruModel.EmployeePerformance" Width="1.5" PointX="7.5" PointY="14.5" />
+        <AssociationConnector Association="RetailGuruModel.FK_EmployeePerformance_EmployeeTable" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

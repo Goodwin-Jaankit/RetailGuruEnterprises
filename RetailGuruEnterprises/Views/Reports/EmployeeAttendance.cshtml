@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DatabaseAccess.EmployeeAttendanceTable>
+
+@{
+    Layout = null;
+    var attendanceCount = Model.Count();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery") <!-- Ensure jQuery is loaded here -->
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#printButton").on("click", function () {
+                window.print();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container body-content">
+        <button id="printButton" class="btn btn-primary">Print this page</button>
+        <div>
+            <strong>Total Attendance Records: @attendanceCount</strong>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AttendDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ComingTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ClosingTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EmployeeTable.Name)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AttendDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ComingTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ClosingTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EmployeeTable.Name)
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

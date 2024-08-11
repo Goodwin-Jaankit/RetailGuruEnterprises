@@ -1,0 +1,63 @@
+﻿@model RetailGuruEnterprises.Models.EmployeeProfileViewModel
+
+
+<h2>@Model.Employee.Name's Profile</h2>
+
+<div class="profile-container">
+    <div class="profile-header text-center">
+        <h1>@Model.Employee.Name</h1>
+        <img src="@Model.Employee.Photo" alt="Employee Photo" style="height: 200px; width: 200px; border-radius: 50%;" />
+        <p>@Model.Employee.DesignationTable.Title</p>
+    </div>
+
+    <div class="profile-body">
+        <h3>Personal Details</h3>
+        <p><b>Name:</b> @Model.Employee.Name</p>
+        <p><b>Contact No:</b> @Model.Employee.ContactNo</p>
+        <p><b>Email Address:</b> @Model.Employee.EmailAddress</p>
+        <p><b>Address:</b> @Model.Employee.Address</p>
+        <p><b>Qualification:</b> @Model.Employee.Qualification</p>
+        <p><b>Description:</b> @Model.Employee.Description</p>
+        <p><b>Status:</b> @(Model.Employee.IsActive ? "Active" : "Inactive")</p>
+
+        <h3>Education Details</h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>Degree</th>
+                <th>Institute/University</th>
+                <th>From Year</th>
+                <th>To Year</th>
+                <th>City</th>
+                <th>Country</th>
+            </tr>
+            @foreach (var edu in Model.EducationDetails)
+            {
+                <tr>
+                    <td>@edu.Degree</td>
+                    <td>@edu.InstituteUniversity</td>
+                    <td>@edu.FromYear?.Year</td>
+                    <td>@edu.ToYear?.Year</td>
+                    <td>@edu.City</td>
+                    <td>@edu.Country</td>
+                </tr>
+            }
+        </table>
+
+        <h3>Salary Details</h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>Month</th>
+                <th>Year</th>
+                <th>Amount</th>
+            </tr>
+            @foreach (var sal in Model.SalaryDetails)
+            {
+                <tr>
+                    <td>@sal.SalaryDate.Month</td>
+                    <td>@sal.SalaryDate.Year</td>
+                    <td>@sal.Amount</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
